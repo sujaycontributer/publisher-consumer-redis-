@@ -5,6 +5,7 @@ async function startRedis() {
         .on("error", (err) => console.log("Redis Client Error", err))
         .connect();
 
+    // adding the website into stream
     const res = await client.xAdd('betteruptime:website', '*', {
         url: "https://perplexity.com",
         id: "1"

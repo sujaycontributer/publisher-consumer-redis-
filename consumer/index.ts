@@ -5,6 +5,7 @@ async function startRedis() {
         .on("error", (err) => console.log("Redis Client Error", err))
         .connect();
 
+    // reading the websites from redis cosumer group
     const res:any = await client.xReadGroup('india','india-1', {
         key: 'betteruptime:website',
         id: '>'

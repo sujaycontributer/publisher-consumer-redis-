@@ -1,5 +1,6 @@
 import { createClient } from "redis";
 
+// prodcuer where adding the url to the stram
 async function startRedis() {
     const client = await createClient()
         .on("error", (err) => console.log("Redis Client Error", err))

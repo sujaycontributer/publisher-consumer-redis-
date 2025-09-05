@@ -1,5 +1,6 @@
 import { createClient } from "redis";
 
+// for consumer we reat the data from stream
 async function startRedis() {
     const client = await createClient()  // redis default port 6379
         .on("error", (err) => console.log("Redis Client Error", err))
